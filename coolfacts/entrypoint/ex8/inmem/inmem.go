@@ -11,7 +11,7 @@ func NewFactRepository() *factRepository {
 }
 
 func (r *factRepository) Add(f fact.Fact)  {
-	r.Facts  = append(r.Facts, f)
+	r.Facts=append([]fact.Fact{f},r.Facts...)
 }
 
 func (r *factRepository) GetAll() []fact.Fact {
